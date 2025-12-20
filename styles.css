@@ -1,0 +1,508 @@
+
+
+:root {
+    --primary: #ffc3d9;
+
+    --primary-light: #ffe6f0;
+
+    --accent: #b5ead7;
+
+    --bg-light: #fff9f9;
+
+    --text-primary: #5d5d5d;
+
+    --text-secondary: #8b8b8b;
+    --glass: rgba(255, 255, 255, 0.7);
+    --border-radius: 24px;
+    --transition: all 0.4s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(120deg, #fff0f5 0%, #e6e6fa 100%);
+
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+.header {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff9ebb;
+
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 2;
+    animation: fadeIn 1s ease-out;
+}
+
+.subtitle {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #c7ceea;
+
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+}
+
+.highlight {
+    background: linear-gradient(to right, #ffc3d9, #ff9ebb);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+
+.console {
+    background: var(--glass);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 30px rgba(255, 183, 178, 0.15);
+    font-family: "Courier New", monospace;
+    font-size: 15px;
+    color: #777;
+    text-align: left;
+    margin-bottom: 50px;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+}
+
+.console p {
+    margin: 8px 0;
+    opacity: 0;
+    animation: slideUp 0.5s ease forwards;
+}
+
+.line-1 {
+    animation-delay: 0.5s;
+}
+
+.line-2 {
+    animation-delay: 1.5s;
+}
+
+.line-3 {
+    animation-delay: 2.5s;
+}
+
+.line-4 {
+    animation-delay: 3.5s;
+}
+
+
+.surprise-btn {
+    background: linear-gradient(135deg, #ffc3d9 0%, #ff9ebb 100%);
+
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255, 183, 193, 0.4);
+    transition: var(--transition);
+    font-weight: 600;
+    display: flex;
+    margin: 20px auto;
+    align-items: center;
+    gap: 10px;
+}
+
+.surprise-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(255, 183, 178, 0.6);
+    background: linear-gradient(135deg, #ffdac1 0%, #ffb7b2 100%);
+}
+
+.surprise-text {
+    margin-top: 30px;
+    font-size: 24px;
+    font-family: "Playfair Display", serif;
+    color: #ff9aa2;
+    min-height: 60px;
+    animation: zoomIn 0.5s ease;
+}
+
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.entry-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(-45deg, #fff0f5, #ffe6f2, #ffc3d9, #e6e6fa);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.8s ease-out, visibility 0.8s;
+}
+
+.entry-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.entry-content {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(16px);
+    padding: 60px 80px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 15px 35px rgba(255, 183, 178, 0.15);
+    animation: floatCard 6s ease-in-out infinite;
+}
+
+.entry-content h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    color: #ff9ebb;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 4px rgba(255, 195, 217, 0.3);
+    animation: fadeIn 1s ease-out;
+}
+
+.entry-content p {
+    color: #8b8b8b;
+    font-size: 1.2rem;
+    margin-bottom: 48px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    animation: fadeIn 1s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+.enter-btn {
+    background: white;
+    color: #ff9ebb;
+    border: none;
+    padding: 20px 50px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(255, 158, 187, 0.25);
+    animation: pulse 2s infinite, fadeIn 1s ease-out 0.6s forwards;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0;
+}
+
+.enter-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(255, 158, 187, 0.4);
+    background: #fff;
+    color: #ffc3d9;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes floatCard {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 158, 187, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(255, 158, 187, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 158, 187, 0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.gift-card {
+    display: none;
+    margin: 30px auto;
+    perspective: 1000px;
+}
+
+.gift-card.show {
+    display: block;
+    animation: popIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.card-inner {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(255, 183, 178, 0.3);
+    border: 2px solid #fff;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-inner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 195, 217, 0.2) 0%, transparent 70%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.card-front h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #c7ceea;
+    margin-bottom: 10px;
+}
+
+.card-front h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    color: #ff9ebb;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.card-front p {
+    font-size: 1.1rem;
+    color: #8b8b8b;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.signature {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    color: #ffc3d9;
+    font-size: 1.2rem;
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    z-index: 10;
+    opacity: 0.6;
+}
+
+.footer-link {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+    pointer-events: auto;
+
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: var(--primary);
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        width: 85%;
+        padding: 10px 20px;
+        top: 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .hero {
+        padding: 120px 20px 40px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+
+    .console {
+        width: 100%;
+        padding: 20px;
+        font-size: 12px;
+        margin-bottom: 30px;
+    }
+
+
+    .entry-content {
+        padding: 40px 20px;
+        width: 90%;
+        border-radius: 30px;
+    }
+
+    .entry-content h1 {
+        font-size: 2rem;
+    }
+
+    .entry-content p {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .enter-btn {
+        padding: 15px 30px;
+        font-size: 16px;
+    }
+}
