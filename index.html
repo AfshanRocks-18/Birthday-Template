@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="styles.css?v=12" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+ 
+    <div id="entry-screen" class="entry-screen">
+        <div class="entry-content">
+            <h1>Making a Wish...</h1>
+            <p>Tap to start the magic ✨</p>
+            <button id="enterBtn" class="enter-btn">Enter Celebration</button>
+        </div>
+    </div>
+
+
+    <header class="header">
+        <div class="logo">Royal Celebration</div>
+        <nav class="nav">
+
+        </nav>
+    </header>
+
+    <main class="hero">
+
+        <section class="hero-content">
+            <div class="hero-text">
+                <p class="subtitle">Dated: 19 Feb</p>
+                <h1 class="hero-title">Happy Birthday,<br><span class="highlight">Meri Princess</span></h1>
+                <p class="hero-description">To the girl who adds sparkle to every day. Wishing you a year as fabulous as
+                    you are! ✨</p>
+            </div>
+
+            <div class="console fade-in-delay">
+                <p class="line-1">> initializing royal treatment...</p>
+                <p class="line-2">> inflating balloons.exe...</p>
+                <p class="line-3">> sprinkling imaginary glitter everywhere...</p>
+                <p class="line-4">> result: You are the Queen of the day! 👑</p>
+            </div>
+
+    
+            <button id="surpriseBtn" class="surprise-btn">
+                <span class="btn-text">Open Gift</span>
+                <span class="btn-icon">🎈</span>
+            </button>
+
+            <div id="giftCard" class="gift-card hidden">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>A Little Wish</h3>
+                        <h2>Stay Awesome! 💖</h2>
+                        <p>May your smile never fade and your joy never end. You light up every room you walk into! ✨
+                        </p>
+                        <div class="signature">With Love, Your Bestie</div>
+                    </div>
+                </div>
+            </div>
+            <p id="surpriseText" class="surprise-text" style="display: none;"></p>
+        </section>
+
+
+        <div class="decoration decoration-top"></div>
+        <div class="decoration decoration-bottom"></div>
+    </main>
+
+    <footer class="footer">
+        <p>Recommended by your special friend &bull; Developed by <a href="https://instagram.com/kxunal._"
+                target="_blank" class="footer-link">Kunal</a> &bull; Specially Designed for You</p>
+    </footer>
+
+    <canvas id="balloons"></canvas>
+    <canvas id="confetti"></canvas>
+    <audio id="music" src="HAPPY BIRTHDAY INSTRUMENTAL - Uɴᴋɴᴏᴡɴ.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
