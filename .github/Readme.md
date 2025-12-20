@@ -1,4 +1,4 @@
-# 🎂 Happy Birthday Princess - Website
+# 🎂 Happy Birthday Website Template
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-ffc3d9?style=for-the-badge&logo=vercel&logoColor=white)](https://happybirthdaytooyouu.vercel.app)
 
